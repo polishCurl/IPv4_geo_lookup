@@ -20,6 +20,8 @@ void BM_CsvReader(benchmark::State& state, Args&&... args) {
         benchmark::DoNotOptimize(csv_row[i]);
       }
     }
+
+    benchmark::ClobberMemory();
   }
 
   // Get the number of values in a row (assumes all rows have same size)
