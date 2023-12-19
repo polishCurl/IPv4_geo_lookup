@@ -39,3 +39,14 @@ TEST(CsvRowTest, TwoValuesTralingComma) {
   EXPECT_EQ(row[1], "2.4561");
   ASSERT_THROW(row[2], std::invalid_argument);
 }
+
+TEST(CsvRowTest, CommonExample) {
+  CsvRow row{"L662,A112500,2023,0,3"};
+  ASSERT_EQ(row.size(), 5);
+  EXPECT_EQ(row[0], "L662");
+  EXPECT_EQ(row[1], "A112500");
+  EXPECT_EQ(row[2], "2023");
+  EXPECT_EQ(row[3], "0");
+  EXPECT_EQ(row[4], "3");
+  ASSERT_THROW(row[5], std::invalid_argument);
+}
