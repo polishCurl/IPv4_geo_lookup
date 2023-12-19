@@ -12,6 +12,12 @@ inline bool file_exists(const std::string& name) {
   return f.good();
 }
 
+TEST(CsvReaderTest, MissingFile) {
+  const std::string kInputCsvFile{"does_not_exist.csv"};
+  ASSERT_FALSE(file_exists(kInputCsvFile));
+  ASSERT_THROW(CsvReader{kInputCsvFile}, std::invalid_argument);
+}
+
 TEST(CsvReaderTest, EmptyFile) {
   const std::string kInputCsvFile{"csv/csv_reader/test/data/empty.csv"};
   ASSERT_TRUE(file_exists(kInputCsvFile));
