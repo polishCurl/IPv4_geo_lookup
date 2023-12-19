@@ -18,8 +18,8 @@ class CsvReader : public ICsvReader {
   CsvReader& operator=(CsvReader&&) = delete;
   ~CsvReader();
 
-  bool next() override;
-  ICsvRow& get() override;
+  bool next() noexcept override;
+  ICsvRow& get() noexcept override;
 
  protected:
   std::ifstream stream_;

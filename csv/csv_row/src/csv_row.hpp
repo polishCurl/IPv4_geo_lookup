@@ -10,14 +10,14 @@ namespace csv {
 
 class CsvRow : public ICsvRow {
  public:
-  CsvRow(const std::string_view& line);
-  CsvRow(const CsvRow& other);
-  CsvRow(CsvRow&& other);
-  CsvRow& operator=(const CsvRow& other);
-  CsvRow& operator=(CsvRow&&);
+  CsvRow(const std::string_view& line) noexcept;
+  CsvRow(const CsvRow& other) noexcept;
+  CsvRow(CsvRow&& other) noexcept;
+  CsvRow& operator=(const CsvRow& other) noexcept;
+  CsvRow& operator=(CsvRow&&) noexcept;
 
   std::string_view operator[](std::size_t index) const override;
-  std::size_t size() const override;
+  std::size_t size() const noexcept override;
 
  protected:
   std::string_view line_;

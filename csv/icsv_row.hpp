@@ -29,7 +29,7 @@ class ICsvRow {
    *
    * \return CSV row's value count.
    */
-  virtual std::size_t size() const = 0;
+  virtual std::size_t size() const noexcept = 0;
 };
 
 }  // namespace csv

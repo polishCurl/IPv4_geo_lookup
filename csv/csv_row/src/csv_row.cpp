@@ -6,7 +6,7 @@
 
 namespace csv {
 
-CsvRow::CsvRow(const std::string_view& line)
+CsvRow::CsvRow(const std::string_view& line) noexcept
     : line_{[&line]() {
         if (line[line.size() - 1] == ',') {
           return line.substr(0, line.size() - 1);
@@ -27,20 +27,20 @@ CsvRow::CsvRow(const std::string_view& line)
   comma_indexes_.emplace_back(pos);
 }
 
-CsvRow::CsvRow(const CsvRow& other)
+CsvRow::CsvRow(const CsvRow& other) noexcept
     : line_{other.line_}, comma_indexes_{other.comma_indexes_} {}
 
-CsvRow::CsvRow(CsvRow&& other)
+CsvRow::CsvRow(CsvRow&& other) noexcept
     : line_{std::move(other.line_)},
       comma_indexes_{std::move(other.comma_indexes_)} {}
 
-CsvRow& CsvRow::operator=(const CsvRow& other) {
+CsvRow& CsvRow::operator=(const CsvRow& other) noexcept {
   line_ = other.line_;
   comma_indexes_ = other.comma_indexes_;
   return *this;
 }
 
-CsvRow& CsvRow::operator=(CsvRow&& other) {
+CsvRow& CsvRow::operator=(CsvRow&& other) noexcept {
   line_ = std::move(other.line_);
   comma_indexes_ = std::move(other.comma_indexes_);
   return *this;
@@ -59,6 +59,6 @@ std::string_view CsvRow::operator[](std::size_t index) const {
   return std::string_view(&line_[start_index], end_index - start_index);
 }
 
-std::size_t CsvRow::size() const { return comma_indexes_.size() - 1; }
+std::size_t CsvRow::size() const noexcept { return comma_indexes_.size() - 1; }
 
 }  // namespace csv

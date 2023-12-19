@@ -12,7 +12,7 @@ CsvReader::CsvReader(std::string filename)
 
 CsvReader::~CsvReader() { stream_.close(); }
 
-bool CsvReader::next() {
+bool CsvReader::next() noexcept {
   const auto line_read_ok = static_cast<bool>(std::getline(stream_, line_));
   if (line_read_ok) {
     row_ = CsvRow{line_};
@@ -20,6 +20,6 @@ bool CsvReader::next() {
   return line_read_ok;
 }
 
-ICsvRow& CsvReader::get() { return row_; };
+ICsvRow& CsvReader::get() noexcept { return row_; };
 
 }  // namespace csv
