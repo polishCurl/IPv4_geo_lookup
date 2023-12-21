@@ -22,3 +22,13 @@ cc_test(
         "@googletest//:gtest_main",
     ],
 )
+
+cc_binary(
+    name = "csv_reader_bench",
+    srcs = ["bench/csv_reader_bench.cpp"],
+    data = glob(["bench/data/*.csv"]),
+    deps = [
+        ":csv_reader",
+        "@googlebench//:benchmark_main",
+    ],
+)
