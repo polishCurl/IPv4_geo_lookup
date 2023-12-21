@@ -6,6 +6,7 @@ RUN apt-get install -y build-essential
 RUN apt-get install -y git
 RUN apt-get install -y doxygen
 RUN apt-get install -y lcov
+RUN apt-get install -y git-lfs
 
 # Install Bazel
 RUN apt-get install -y apt-transport-https curl gnupg -y
