@@ -1,5 +1,5 @@
-#ifndef IPV4_GEO_LOOKUP_CSV_ICSV_READER_HPP_
-#define IPV4_GEO_LOOKUP_CSV_ICSV_READER_HPP_
+#ifndef CSV_ICSV_READER_HPP_
+#define CSV_ICSV_READER_HPP_
 
 #include "csv/icsv_row.hpp"
 
@@ -32,4 +32,4 @@ class ICsvReader {
 
 }  // namespace csv
 
-#endif  // IPV4_GEO_LOOKUP_CSV_ICSV_READER_HPP_
+#endif  // CSV_ICSV_READER_HPP_

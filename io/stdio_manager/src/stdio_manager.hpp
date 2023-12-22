@@ -1,5 +1,5 @@
-#ifndef IPV4_GEO_LOOKUP_IO_SRC_STDIO_MANAGER_HPP_
-#define IPV4_GEO_LOOKUP_IO_SRC_STDIO_MANAGER_HPP_
+#ifndef IO_STDIO_MANAGER_SRC_STDIO_MANAGER_HPP_
+#define IO_STDIO_MANAGER_SRC_STDIO_MANAGER_HPP_
 
 #include <string>
 
@@ -48,4 +48,4 @@ class StdioManager : public IOManager {
 
 }  // namespace io
 
-#endif  // IPV4_GEO_LOOKUP_IO_SRC_STDIO_MANAGER_HPP_
+#endif  // IO_STDIO_MANAGER_SRC_STDIO_MANAGER_HPP_

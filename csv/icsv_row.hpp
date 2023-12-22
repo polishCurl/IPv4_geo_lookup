@@ -1,5 +1,5 @@
-#ifndef IPV4_GEO_LOOKUP_CSV_ICSV_ROW_HPP_
-#define IPV4_GEO_LOOKUP_CSV_ICSV_ROW_HPP_
+#ifndef CSV_ICSV_ROW_HPP_
+#define CSV_ICSV_ROW_HPP_
 
 #include <string>
 
@@ -34,4 +34,4 @@ class ICsvRow {
 
 }  // namespace csv
 
-#endif  // IPV4_GEO_LOOKUP_CSV_ICSV_ROW_HPP_
+#endif  // CSV_ICSV_ROW_HPP_

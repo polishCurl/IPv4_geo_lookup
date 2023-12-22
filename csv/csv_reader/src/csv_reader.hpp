@@ -1,5 +1,5 @@
-#ifndef IPV4_GEO_LOOKUP_CSV_CSV_READER_SRC_CSV_READER_HPP_
-#define IPV4_GEO_LOOKUP_CSV_CSV_READER_SRC_CSV_READER_HPP_
+#ifndef CSV_CSV_READER_SRC_CSV_READER_HPP_
+#define CSV_CSV_READER_SRC_CSV_READER_HPP_
 
 #include <fstream>
 
@@ -32,4 +32,4 @@ class CsvReader : public ICsvReader {
 
 }  // namespace csv
 
-#endif  // IPV4_GEO_LOOKUP_CSV_CSV_READER_SRC_CSV_READER_HPP_
+#endif  // CSV_CSV_READER_SRC_CSV_READER_HPP_

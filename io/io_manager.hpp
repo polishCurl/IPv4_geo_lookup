@@ -1,5 +1,5 @@
-#ifndef IPV4_GEO_LOOKUP_IO_IO_MANAGER_HPP_
-#define IPV4_GEO_LOOKUP_IO_IO_MANAGER_HPP_
+#ifndef IO_IO_MANAGER_HPP_
+#define IO_IO_MANAGER_HPP_
 
 #include <string>
 
@@ -29,4 +29,4 @@ class IOManager {
 
 }  // namespace io
 
-#endif  // IPV4_GEO_LOOKUP_IO_IO_MANAGER_HPP_
+#endif  // IO_IO_MANAGER_HPP_
