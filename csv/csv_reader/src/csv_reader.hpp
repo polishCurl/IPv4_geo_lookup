@@ -9,6 +9,9 @@
 
 namespace csv {
 
+/**
+ * \brief CSV file reader implementation.
+ */
 class CsvReader : public ICsvReader {
  public:
   CsvReader(std::string filename);
@@ -22,9 +25,9 @@ class CsvReader : public ICsvReader {
   ICsvRow& get() noexcept override;
 
  protected:
-  std::ifstream stream_;
-  std::string line_;
-  CsvRow row_;
+  std::ifstream stream_;  //*!< For reading CSV file
+  std::string line_;      //*!< Current CSV file line being parsed
+  CsvRow row_;            //*!< Read-only CSV row view of the current line_
 };
 
 }  // namespace csv

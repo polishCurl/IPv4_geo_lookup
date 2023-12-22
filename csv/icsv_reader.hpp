@@ -6,7 +6,7 @@
 namespace csv {
 
 /**
- * \brief CSV reader interface.
+ * \brief CSV file reader interface.
  */
 class ICsvReader {
  public:
@@ -16,6 +16,8 @@ class ICsvReader {
    * \brief Move to the next row.
    *
    * \return True if the iterator has been sucessfully moved, false otherwise.
+   *
+   * \note This method must be called before the first CSV row access.
    */
 
   virtual bool next() noexcept = 0;

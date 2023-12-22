@@ -8,6 +8,9 @@
 
 namespace csv {
 
+/**
+ * \brief CSV row view implementation.
+ */
 class CsvRow : public ICsvRow {
  public:
   CsvRow(const std::string_view& line) noexcept;
@@ -20,8 +23,8 @@ class CsvRow : public ICsvRow {
   std::size_t size() const noexcept override;
 
  protected:
-  std::string_view line_;
-  std::vector<int> comma_indexes_;
+  std::string_view line_;           //*!< Read-only view of CSV file line
+  std::vector<int> comma_indexes_;  //*!< List of comma (',') positions in line_
 };
 
 }  // namespace csv
