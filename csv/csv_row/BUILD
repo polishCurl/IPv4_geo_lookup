@@ -7,7 +7,7 @@ cc_library(
         "src/csv_row.hpp",
     ],
     strip_include_prefix = "",
-    visibility = ["//csv/csv_reader:__subpackages__"],
+    visibility = ["//csv:__subpackages__"],
     deps = ["//csv:csv_row_interface"],
 )
 
