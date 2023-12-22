@@ -7,7 +7,7 @@ cc_library(
         "src/stdio_manager.hpp",
     ],
     strip_include_prefix = "",
-    visibility = ["//app:__subpackages__"],
+    visibility = ["//io:__subpackages__"],
     deps = [
         "//io:io_manager",
     ],
