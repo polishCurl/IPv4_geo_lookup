@@ -32,11 +32,14 @@ void BM_CsvReader(benchmark::State& state, Args&&... args) {
   state.SetItemsProcessed(rows_processed * row_size);
 }
 
-BENCHMARK_CAPTURE(BM_CsvReader,
-                  geographic_units_by_industry_and_statistical_area,
+BENCHMARK_CAPTURE(BM_CsvReader, geographic_units,
                   "csv/csv_reader/bench/data/"
                   "geographic-units-by-industry-and-statistical-area-2000-2023-"
                   "descending-order-february-2023.csv");
 
-BENCHMARK_CAPTURE(BM_CsvReader, geoip2 - ipv4,
-                  "csv/csv_reader/bench/data/geoip2-ipv4.csv");
+BENCHMARK_CAPTURE(BM_CsvReader, geolite2_country_ipv4,
+                  "csv/csv_reader/bench/data/geolite2-country-ipv4.csv");
+
+BENCHMARK_CAPTURE(BM_CsvReader, gross_domestic_product,
+                  "csv/csv_reader/bench/data/"
+                  "gross-domestic-product-september-2023-quarter.csv");
