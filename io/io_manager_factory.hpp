@@ -6,9 +6,17 @@
 
 namespace io {
 
+/**
+ * \brief Factory for objects implementing IOManager interface.
+ */
 class IOManagerFactory {
  public:
-  IOManager* create() const { return StdioManager::getInstance(); };
+  /**
+   * \brief Create IOManager instance.
+   *
+   * \return Pointer to object implementing IOManager interface.
+   */
+  static IOManager* create() { return StdioManager::getInstance(); };
 };
 
 }  // namespace io
