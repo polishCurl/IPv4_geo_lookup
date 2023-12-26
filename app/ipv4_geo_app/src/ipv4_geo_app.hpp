@@ -19,7 +19,7 @@ using Handler = std::function<void(const Args&)>;
 using Parser = std::map<std::string, Handler>;
 
 /**
- * \brief IPv4 geolocation lookup application implementation.
+ * \brief Network geolocation lookup application implementation.
  */
 class Ipv4GeoApp : public IApp {
  public:
@@ -38,6 +38,10 @@ class Ipv4GeoApp : public IApp {
 
   io::IOManager* io_manager_;  //*!< Application's IO manager
   const Parser parser_;        //*!< Application's IO manager
+
+  static constexpr char const* kExitCommand{"EXIT"};
+  static constexpr char const* kLoadCommand{"LOAD"};
+  static constexpr char const* kLookupCommand{"LOOKUP"};
 };
 
 }  // namespace app

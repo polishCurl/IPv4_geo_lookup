@@ -8,9 +8,19 @@ namespace app {
 
 Ipv4GeoApp::Ipv4GeoApp()
     : io_manager_{io::IOManagerFactory::create()},
-      parser_{{"EXIT", [this](const Args& args) {
+      parser_{{kExitCommand,
+               [this](const Args& args) {
                  this->ack();
                  std::exit(EXIT_SUCCESS);
+               }},
+              {kLoadCommand,
+               [this](const Args& args) {
+                 // TODO: Implement load() command
+                 this->ack();
+               }},
+              {kLookupCommand, [this](const Args& args) {
+                 // TODO: Implement lookup() command
+                 this->ack();
                }}} {}
 
 bool Ipv4GeoApp::initialize() { return true; }
@@ -25,7 +35,7 @@ bool Ipv4GeoApp::run() {
     if (args.empty() || (parser_.find(args[0]) == parser_.end())) {
       io_manager_->write("ERROR!");
     } else {
-      parser_.at(input)(args);
+      parser_.at(args[0])(args);
     }
   }
 
